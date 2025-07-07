@@ -10,6 +10,7 @@ import type { ChartDBConfig } from '@/lib/domain/config';
 import type { DBDependency } from '@/lib/domain/db-dependency';
 import type { Area } from '@/lib/domain/area';
 import type { DBCustomType } from '@/lib/domain/db-custom-type';
+import { saveDiagram, getDiagram } from '@/lib/api/diagram-api';
 
 export const StorageProvider: React.FC<React.PropsWithChildren> = ({
     children,
@@ -715,6 +716,20 @@ export const StorageProvider: React.FC<React.PropsWithChildren> = ({
         [db]
     );
 
+    const saveDiagramToApi: StorageContext['saveDiagramToApi'] = useCallback(
+        async (diagram) => {
+            await saveDiagram(diagram);
+        },
+        []
+    );
+
+    const getDiagramFromApi: StorageContext['getDiagramFromApi'] = useCallback(
+        async (id) => {
+            return await getDiagram(id);
+        },
+        []
+    );
+
     return (
         <storageContext.Provider
             value={{
@@ -725,6 +740,8 @@ export const StorageProvider: React.FC<React.PropsWithChildren> = ({
                 getDiagram,
                 updateDiagram,
                 deleteDiagram,
+                saveDiagramToApi,
+                getDiagramFromApi,
                 addTable,
                 getTable,
                 updateTable,

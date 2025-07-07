@@ -38,6 +38,10 @@ export interface StorageContext {
     }) => Promise<void>;
     deleteDiagram: (id: string) => Promise<void>;
 
+    // Remote persistence
+    saveDiagramToApi: (diagram: Diagram) => Promise<void>;
+    getDiagramFromApi: (id: string) => Promise<Diagram | undefined>;
+
     // Table operations
     addTable: (params: { diagramId: string; table: DBTable }) => Promise<void>;
     getTable: (params: {
@@ -137,6 +141,8 @@ export const storageInitialValue: StorageContext = {
     getDiagram: emptyFn,
     updateDiagram: emptyFn,
     deleteDiagram: emptyFn,
+    saveDiagramToApi: emptyFn,
+    getDiagramFromApi: emptyFn,
 
     addTable: emptyFn,
     getTable: emptyFn,

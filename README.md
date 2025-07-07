@@ -138,6 +138,12 @@ VITE_OPENAI_API_ENDPOINT=http://localhost:8000/v1
 VITE_LLM_MODEL_NAME=Qwen/Qwen2.5-32B-Instruct-AWQ
 ```
 
+### Remote diagram storage
+
+To store diagrams on a backend service set the `VITE_API_BASE_URL` environment
+variable. When defined ChartDB uses `PUT` and `GET` requests to
+`${VITE_API_BASE_URL}/diagrams/:id` to persist ER diagrams.
+
 ## Try it on our website
 
 1. Go to [ChartDB.io](https://chartdb.io?ref=github_readme_2)
