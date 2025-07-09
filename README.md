@@ -144,6 +144,18 @@ To store diagrams on a backend service set the `VITE_API_BASE_URL` environment
 variable. When defined ChartDB uses `PUT` and `GET` requests to
 `${VITE_API_BASE_URL}/diagrams/:id` to persist ER diagrams.
 
+### Google SSO login
+
+To enable Google login through the company's SSO service configure the following
+environment variables:
+
+```bash
+VITE_SSO_BASE_URL=https://sso.example.com
+VITE_GOOGLE_CLIENT_ID=<your-client-id>
+```
+
+When omitted, a local storage mock is used for authentication.
+
 ## Try it on our website
 
 1. Go to [ChartDB.io](https://chartdb.io?ref=github_readme_2)

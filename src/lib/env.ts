@@ -14,3 +14,5 @@ export const DISABLE_ANALYTICS: boolean =
         import.meta.env.VITE_DISABLE_ANALYTICS) === 'true';
 
 export const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL ?? '';
+export const SSO_BASE_URL: string = import.meta.env.VITE_SSO_BASE_URL ?? '';
+export const GOOGLE_CLIENT_ID: string = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '';

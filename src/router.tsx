@@ -19,6 +19,39 @@ const routes: RouteObject[] = [
         },
     })),
     {
+        path: 'login',
+        async lazy() {
+            const { LoginPage } = await import(
+                './pages/login-page/login-page'
+            );
+            return {
+                element: <LoginPage />,
+            };
+        },
+    },
+    {
+        path: 'auth/callback',
+        async lazy() {
+            const { AuthCallbackPage } = await import(
+                './pages/login-page/auth-callback-page'
+            );
+            return {
+                element: <AuthCallbackPage />,
+            };
+        },
+    },
+    {
+        path: 'my-diagrams',
+        async lazy() {
+            const { DiagramsPage } = await import(
+                './pages/diagrams-page/diagrams-page'
+            );
+            return {
+                element: <DiagramsPage />,
+            };
+        },
+    },
+    {
         path: 'examples',
         async lazy() {
             const { ExamplesPage } = await import(
